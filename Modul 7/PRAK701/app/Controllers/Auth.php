@@ -46,7 +46,6 @@ public function registerProcess()
     ];
 
     if (!$this->validate($rules)) {
-        // Return back with validation errors
         return redirect()->back()->withInput()->with('error', $this->validator->listErrors());
     }
 

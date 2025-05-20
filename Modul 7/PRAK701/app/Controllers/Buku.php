@@ -81,7 +81,7 @@ class Buku extends BaseController
             return redirect()->to('/auth/login')->with('error', 'Login terlebih dahulu!');
         }
     
-        helper('form');  // <-- Load form helper here
+        helper('form');
     
         $buku = $this->bukuModel->find($id);
         if (!$buku) {
@@ -94,7 +94,6 @@ class Buku extends BaseController
         ]);
     }
 
-    // Update book data
     public function update($id = null)
     {
         if (!session()->has('user')) {
@@ -145,7 +144,6 @@ class Buku extends BaseController
         return redirect()->to('/buku')->with('success', 'Data buku berhasil diupdate.');
     }
 
-    // Delete book
     public function delete($id = null)
     {
         if (!session()->has('user')) {
@@ -161,7 +159,6 @@ class Buku extends BaseController
         return redirect()->to('/buku')->with('success', 'Data buku berhasil dihapus.');
     }
 
-    // Show details of a single book
     public function show($id = null)
     {
 
